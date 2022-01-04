@@ -8,7 +8,6 @@ int NumCustomers = ...;
 range Customers = 1..NumCustomers;
 int demand[Customers] = ...;
 
-int MaxTrucks = ...;
 int Capacity = ...;
 
 

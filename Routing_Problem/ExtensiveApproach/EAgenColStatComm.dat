@@ -7,11 +7,21 @@
  // Common data (EAgenColStatComm.dat)
 
 
+// small instance
+/*
 NumCustomers = 4;
 demand = [4, 7, 5, 3];
 
-MaxTrucks = 4;
 Capacity = 10;
+*/
+
+// bigger instance
+NumCustomers = 18;
+demand = [4, 7, 5, 3, 6, 2, 7, 5, 8, 3, 7, 4, 1, 8, 6, 4, 3, 2];
+
+Capacity = 10;
+
+
 
 Routes = {}; // set of all feasible routes
 /*
