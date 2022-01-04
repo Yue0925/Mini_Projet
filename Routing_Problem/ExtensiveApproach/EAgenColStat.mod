@@ -26,12 +26,12 @@ main{
    genRoute.oplModel.addDataSource(data);
    genRoute.oplModel.generate();
    genRoute.cp.startNewSearch();
-   var  n = 1;
+   var cpt = 1;
 
    // keep finding sols
-   while (genRoute.cp.next() && n <= 1000) { // TODO : try with bigger limit !!!
-   	 write ("<",n, ",");
-     n++; 
+   while (genRoute.cp.next()) { 
+   	 write("Configuration ", cpt, " ");
+     cpt++; 
      genRoute.oplModel.postProcess(); // print
      // add new sol
      data.Routes.add(genRoute.oplModel.newId, 
@@ -41,4 +41,14 @@ main{
    // clôture
    genRoute.cp.endSearch();
    genRoute.end();
+
+   // select minimum trucks
+   var chooseRoute = new IloOplRunConfiguration("EAgenColStatChooseRoute.mod");
+   chooseRoute.cplex = cplex;   
+   chooseRoute.oplModel.addDataSource(data);   
+   chooseRoute.oplModel.generate();
+   if (chooseRoute.cplex.solve()) {
+     chooseRoute.oplModel.postProcess();
+   } 
+   chooseRoute.end();
  }

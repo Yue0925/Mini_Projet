@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?><project>
 	<version>1.0</version>
 	<configs>
-		<config default="true" name="A-Generation 1 route" category="opl">
+		<config default="false" name="Route generation" category="opl">
 			<ref name="EAgenColStatComm.dat" type="data">
 			</ref>
 			<ref name="EAgenColStatGenRoute.mod" type="model">
 			</ref>
 		</config>
-		<config default="false" name="B-Generation all routes" category="opl">
-			<ref name="EAgenColStatComm.dat" type="data">
-			</ref>
-			<ref name="EAgenColStat.mod" type="model">
-			</ref>
-		</config>
-		<config default="false" name="Routes selection" category="opl">
+		<config default="false" name="Route selection" category="opl">
 			<ref name="EAgenColStatComm.dat" type="data">
 			</ref>
 			<ref name="EAgenColStatChooseRoute.mod" type="model">
+			</ref>
+		</config>
+		<config default="true" name="Global" category="opl">
+			<ref name="EAgenColStatComm.dat" type="data">
+			</ref>
+			<ref name="EAgenColStat.mod" type="model">
 			</ref>
 		</config>
 	</configs>

@@ -13,7 +13,8 @@ demand = [4, 7, 5, 3];
 MaxTrucks = 4;
 Capacity = 10;
 
-//Routes = {}; // set of all feasible routes
+Routes = {}; // set of all feasible routes
+/*
 Routes = { 
 <1, [0 1 0 0]>,
 <2, [0 0 1 0]>,
@@ -24,3 +25,4 @@ Routes = {
 <7, [1 0 0 1]>,
 <8, [1 0 1 0]>
 };
+*/
