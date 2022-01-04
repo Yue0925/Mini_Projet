@@ -1,0 +1,26 @@
+/*********************************************
+ * OPL 12.10.0.0 Data
+ * Author: yue
+ * Creation Date: Jan 4, 2022 at 6:12:53 PM
+ *********************************************/
+ 
+ // Common data (EAgenColStatComm.dat)
+
+
+NumCustomers = 4;
+demand = [4, 7, 5, 3];
+
+MaxTrucks = 4;
+Capacity = 10;
+
+//Routes = {}; // set of all feasible routes
+Routes = { 
+<1, [0 1 0 0]>,
+<2, [0 0 1 0]>,
+<3, [0 0 0 1]>,
+<4, [0 1 0 1]>,
+<5, [0 0 1 1]>,
+<6, [1 0 0 0]>,
+<7, [1 0 0 1]>,
+<8, [1 0 1 0]>
+};
