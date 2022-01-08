@@ -21,6 +21,12 @@
 			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
 			</ref>
 		</config>
+		<config default="false" name="ByB" category="opl">
+			<ref name="ByB.mod" type="model">
+			</ref>
+			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
+			</ref>
+		</config>
 	</configs>
 	
 </project>
