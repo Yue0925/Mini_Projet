@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config default="true" name="relaxed problem using column generation" category="opl">
+			<ref name="routing.dat" type="data">
+			</ref>
+			<ref name="routing_main.mod" type="model">
+			</ref>
+		</config>
+	</configs>
+	
+</project>
