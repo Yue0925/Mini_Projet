@@ -13,13 +13,21 @@
  range chan = 1..ch;
 
  int offset [i in emet][j in emet]=...;
- dvar int x[t in emet] in chan;
+ 
+ // variables
+ dvar int x[t in emet] in chan; // the frequency allocated to each transmetter
  dvar int z;
- minimize z;
-  
+ 
+ // objective is to minimize the maximum frequency used
+ minimize max(t in emet) x[t];
+ 
+// constraints
  subject to{
-    forall (t in emet) x[t] <= z ;
- 	forall (t in emet : t%2 == 0, c in chan : c%2 != 0)   	x[t]!= c ;
- 	forall (t in emet : t%2 != 0, c in chan : c%2 == 0)   	x[t]!= c ;
- 	forall (i, j in emet : offset[i][j]!=0)  	abs(x[i]-x[j])>= offset[i][j];
+	// transmetter odd/even allocated with frequency odd/even
+    forall (t in emet)
+      x[t]%2 == t%2;
+
+	// constraint proximity
+ 	forall (i, j in emet : offset[i][j]!=0)  	
+ 		abs(x[i]-x[j]) >= offset[i][j];
  }

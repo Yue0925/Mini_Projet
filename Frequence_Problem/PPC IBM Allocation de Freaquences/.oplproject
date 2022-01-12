@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?><project>
 	<version>1.0</version>
 	<configs>
-		<config default="true" name="Configuracion 1" category="opl">
-			<ref name="PPC IBM Allocation de Freaquences.ops" type="setting">
-			</ref>
-			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
-			</ref>
-			<ref name="PPC IBM Allocation de Freaquences_Min.mod" type="model">
-			</ref>
-		</config>
 		<config default="false" name="Configuration unique" category="opl">
 			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
 			</ref>
@@ -25,6 +17,14 @@
 			<ref name="ByB.mod" type="model">
 			</ref>
 			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
+			</ref>
+		</config>
+		<config default="true" name="defaut CP approach" category="opl">
+			<ref name="PPC IBM Allocation de Freaquences.ops" type="setting">
+			</ref>
+			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
+			</ref>
+			<ref name="PPC IBM Allocation de Freaquences_Min.mod" type="model">
 			</ref>
 		</config>
 	</configs>

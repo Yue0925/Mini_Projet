@@ -48,7 +48,7 @@ subject to {
   // Unique constraint in the master model is to cover each customer.
   forall( i in Clients ) 
     ctDelivery:
-      sum( r in Routes ) r.deliver[i] * Truck[r] == 1;
+      sum( r in Routes ) r.deliver[i] * Truck[r] >= 1;
 }
 
 tuple res {
