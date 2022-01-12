@@ -3,11 +3,6 @@
  * Author: yue
  * Creation Date: Jan 12, 2022 at 1:37:15 PM
  *********************************************/
-/*********************************************
- * OPL 12.10.0.0 Model
- * Author: natal
- * Creation Date: 07-01-2022 at 22:42:47
- *********************************************/
 int frequencies[1..10];
 
  include "GenAFeasibleSolution.mod";
@@ -66,11 +61,10 @@ int frequencies[1..10];
  	initialModel.generate();
 	var data=initialModel.dataElements;
 	data.ch = minMaxF;
+	var ite = 1;
 	
  	while(true){//cp.solve()
-		writeln("true");
-		//break;
-		
+		writeln("Iteration ", ite++);
 		var def=initialModel.modelDefinition;
 		var updateModel= new IloOplModel(def,cp);
 		
@@ -78,20 +72,20 @@ int frequencies[1..10];
 		updateModel.generate();
 	 	
 	 	if(cp.solve()){
-		 	writeln("Maximal frequence: ", updateModel.maxF);
+		 	writeln("Maximal frequence allowed: ", updateModel.maxF);
 		 	write("Solution: [");
 			for (var t=1; t<=data.T; t++) write(" ", updateModel.x[t]);
 				write(" ]"); writeln("");
 
 
 		}else{
-		  writeln("no sol found with ", data.ch);
-		  //writeln("There is no other solution with a maximal frequence lower than: ", (updateModel.maxF+1));
+		  writeln("No sol found with frequency ", data.ch);
 		  break;
 		}
-			initialModel=updateModel;
-			data=initialModel.dataElements;
-			data.ch = initialModel.maxF-1;
+		// prepare for the next interation
+		initialModel=updateModel;
+		data=initialModel.dataElements;
+		data.ch = initialModel.maxF-1;
 	} 
 	
 	
