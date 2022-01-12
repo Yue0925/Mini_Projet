@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?><project>
 	<version>1.0</version>
 	<configs>
-		<config default="false" name="Configuration unique" category="opl">
+		<config default="false" name="Generate a feasible solution" category="opl">
 			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
 			</ref>
-			<ref name="unique solution.mod" type="model">
+			<ref name="GenAFeasibleSolution.mod" type="model">
 			</ref>
 		</config>
-		<config default="false" name="N solutions" category="opl">
-			<ref name="N solutions.mod" type="model">
-			</ref>
-			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
-			</ref>
-		</config>
-		<config default="false" name="ByB" category="opl">
-			<ref name="ByB.mod" type="model">
-			</ref>
-			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
-			</ref>
-		</config>
-		<config default="true" name="defaut CP approach" category="opl">
+		<config default="true" name="Defaut CP approach" category="opl">
 			<ref name="PPC IBM Allocation de Freaquences.ops" type="setting">
 			</ref>
 			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
 			</ref>
 			<ref name="PPC IBM Allocation de Freaquences_Min.mod" type="model">
+			</ref>
+		</config>
+		<config default="false" name="Generate N feasible solutions" category="opl">
+			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
+			</ref>
+			<ref name="GenerateNSolutions.mod" type="model">
+			</ref>
+		</config>
+		<config default="false" name="Brunch  and Bound apprach" category="opl">
+			<ref name="PPC IBM Allocation de Freaquences.dat" type="data">
+			</ref>
+			<ref name="BranchBoundApproach.mod" type="model">
 			</ref>
 		</config>
 	</configs>
