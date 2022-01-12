@@ -10,6 +10,8 @@
  * passed from one model to the other
  */
 
+float temp;
+
 int NumCustomers = ...;
 
 range Clients = 1..NumCustomers;
@@ -74,6 +76,9 @@ execute DISPLAY_RESULT {
 
 
 main {
+   var before = new Date();
+   temp = before.getTime();
+   
    var status = 0;
    thisOplModel.generate();
    // This is an epsilon value to check if reduced cost is strictly negative
@@ -152,6 +157,9 @@ main {
    subDef.end();
    subCplex.end();
    subSource.end();
+   
+   var after = new Date();
+   writeln("solving time ~= ", (after.getTime()-temp)/ 1000); // convert to seconds
    
    status;
 }

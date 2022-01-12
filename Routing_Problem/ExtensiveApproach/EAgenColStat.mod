@@ -48,7 +48,7 @@ main{
    chooseRoute.oplModel.addDataSource(data);   
    chooseRoute.oplModel.generate();
    if (chooseRoute.cplex.solve()) {
-     val = chooseRoute.cplex.getObjValue();
+     var val = chooseRoute.cplex.getObjValue();
      writeln("Total trucks used : ", val);
      chooseRoute.oplModel.postProcess();
    } 
