@@ -24,7 +24,7 @@ int frequencies[1..10];
 								f.selectSmallest(f.varIndex(thisOplModel.x)),
 								f.selectRandomValue());
 								
-	cp.setSearchPhases(phase3);  
+	cp.setSearchPhases(phase1);  
 	thisOplModel.generate();
 	cp.param.Workers=1;
 	cp.startNewSearch();
